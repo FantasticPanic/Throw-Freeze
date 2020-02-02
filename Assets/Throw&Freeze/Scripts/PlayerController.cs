@@ -67,9 +67,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator ThrowTimer(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        var newProjectile =  Instantiate(iceProjectile, playerHand.transform.position, Quaternion.identity);
-        Rigidbody iceProjectileRB = iceProjectile.GetComponent<Rigidbody>();
-
-        iceProjectileRB.AddForce(gameObject.transform.forward * 100);
+        Instantiate(iceProjectile, playerHand.transform.position, Quaternion.identity);
+        
     }
 }
