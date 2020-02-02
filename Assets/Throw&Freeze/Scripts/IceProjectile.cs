@@ -17,7 +17,8 @@ public class IceProjectile : ProjectileController
     void Update()
     {
         transform.Translate(PlayerController.PlayerInstance.transform.forward * speed * Time.deltaTime);
-
+        base.Update();
+        
     }
 }
 

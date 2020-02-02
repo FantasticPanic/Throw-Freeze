@@ -357,8 +357,7 @@ MonoBehaviour:
   playerAnim: {fileID: 1046759905}
   iceProjectile: {fileID: 6642230542406581135, guid: b4a10f47cce9d744fbce71e18eddef3b,
     type: 3}
-  playerHand: {fileID: 351934485}
-  throwRate: 0.5
+  projectileStartPoint: {fileID: 351934485}
   isThrowing: 0
 --- !u!1001 &1465786050
 PrefabInstance:

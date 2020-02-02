@@ -9,6 +9,8 @@ public class ProjectileController : MonoBehaviour
     public float speed;
     //how long the projectile will live
     public float lifetime;
+    //current life counter
+    public float _currentLifeSeconds;
     //how far the projectile will go
     public float distance;
     //what does the projectile consider a solid surface
@@ -19,13 +21,13 @@ public class ProjectileController : MonoBehaviour
 
     protected virtual void Start()
     {
-        Invoke("DestroyProjectile", lifetime);
+        _currentLifeSeconds = 0;
     }
 
     // Update is called once per frame
    protected virtual void Update()
     {
-        
+        Invoke("DestroyProjectile", lifetime);
 
     }
 
@@ -34,6 +36,6 @@ public class ProjectileController : MonoBehaviour
         //spawn the destroyed effect at this object's position at this object's rotation
         Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
-
     }
+
 }

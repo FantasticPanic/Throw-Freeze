@@ -106,11 +106,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  lifetime: 5
+  lifetime: 1
+  _currentLifeSeconds: 0
   distance: 5
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 0
-  destroyEffect: {fileID: -927199367670048503, guid: 0dd794a38069bc849b043f75085708dd,
+  destroyEffect: {fileID: 2064502594847123978, guid: 0fbaede5b8f6e6c48adc7c496c5b276f,
     type: 3}
   iceProjectile: {fileID: 6642230542406581135}

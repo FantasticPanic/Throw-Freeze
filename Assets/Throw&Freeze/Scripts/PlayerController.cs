@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //animator for the player
     public Animator playerAnim;
+    //the gameobject that will be the ice projectile
     public GameObject iceProjectile;
-    public GameObject playerHand;
-
-    public float throwRate;
-
+    //the point at which the projectile will start
+    public GameObject projectileStartPoint;
+    //boolean value for the throwing animation
     [SerializeField]
     private bool isThrowing;
 
@@ -39,9 +40,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //if player presses space or any button 
-        if (Input.GetButtonDown("Submit"))
+        if (isThrowing == false)
         {
-            isThrowing = true;
+            if (Input.GetButtonDown("Submit"))
+            {
+                isThrowing = true;
+            }
         }
         else
         {
@@ -50,13 +54,11 @@ public class PlayerController : MonoBehaviour
         Throw();
     }
 
-
     private void Throw()
     {
         if (isThrowing == true)
         {
             playerAnim.SetBool("isThrowing", true);
-            StartCoroutine(ThrowTimer(throwRate));
         }
         else
         {
@@ -64,10 +66,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator ThrowTimer(float waitTime)
+    public void AnimationEnded()
     {
-        yield return new WaitForSeconds(waitTime);
-        Instantiate(iceProjectile, playerHand.transform.position, Quaternion.identity);
-        
+        isThrowing = false;
+    }
+
+    public void AnimationThrow()
+    {
+        Instantiate(iceProjectile, projectileStartPoint.transform.position, Quaternion.identity);
     }
 }
