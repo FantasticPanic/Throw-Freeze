@@ -75,4 +75,9 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(iceProjectile, projectileStartPoint.transform.position, Quaternion.identity);
     }
+
+
+    /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 
+     * 
+     *COPYRIGHT 2020, NICHOLAS RAMSAY, ALL RIGHTS RESERVED */
 }

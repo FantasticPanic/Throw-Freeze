@@ -32,4 +32,8 @@ public class ParticleManager : MonoBehaviour
 
 
     }
+
+    /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 
+     * 
+     *COPYRIGHT 2020, NICHOLAS RAMSAY, ALL RIGHTS RESERVED */
 }

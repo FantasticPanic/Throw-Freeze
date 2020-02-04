@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY*/
     //enemy's collider
     public Collider enemyCollider;
     //enemy original material
@@ -15,6 +16,9 @@ public class EnemyController : MonoBehaviour
     public Material[] ogMats;
     //frozen material
     public Material iceMaterial;
+
+    [SerializeField]
+    private int mineralCount = 100;
 
     public float unfrozenTimer = 5f;
 
@@ -44,6 +48,8 @@ public class EnemyController : MonoBehaviour
             Debug.Log("Enemy is Frozen");
             //changes NPC material to ice
             ChangeMaterial(iceMaterial);
+            //when enemy is hit by projectile, mineral count is reduced by 30% of current mineral count
+            mineralCount = mineralCount - (int)(mineralCount * .3);
         }
 
     }
@@ -116,4 +122,9 @@ public class EnemyController : MonoBehaviour
         ChangeBackMaterial();
 
     }
+
+
+    /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 
+     * 
+     *COPYRIGHT 2020, NICHOLAS RAMSAY, ALL RIGHTS RESERVED */
 }
