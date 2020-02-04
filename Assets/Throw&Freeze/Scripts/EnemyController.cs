@@ -16,11 +16,14 @@ public class EnemyController : MonoBehaviour
     public Material[] ogMats;
     //frozen material
     public Material iceMaterial;
-
+    //mineral count for enemy
     [SerializeField]
     private int mineralCount = 100;
+    //variable for mineral prefab
+    public GameObject mineralPrefabs;
 
     public float unfrozenTimer = 5f;
+    public GameObject iceBreakEffect;
 
     // Start is called before the first frame update
 
@@ -120,6 +123,7 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         ChangeBackMaterial();
+        Instantiate(iceBreakEffect, transform.position, Quaternion.identity);
 
     }
 

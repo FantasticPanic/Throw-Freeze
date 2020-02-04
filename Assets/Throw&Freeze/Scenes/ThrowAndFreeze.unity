@@ -120,96 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &120778513 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1657888545523382999, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-    type: 3}
-  m_PrefabInstance: {fileID: 349775230}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &120778514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120778513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41b68d0c84bcc224aae1a86222b92ac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skinMeshChildren: []
-  originalMaterials: []
---- !u!1001 &349775230
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1657888545523382999, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_Name
-      value: AHHH
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.566
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.5716702e-18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2403049740339693764, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7215872502484132819, guid: fcd79e1f965a7fd4baf62e1ce39a4b62, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: fcd79e1f965a7fd4baf62e1ce39a4b62, type: 3}
 --- !u!1 &351934485 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6167904293427101411, guid: 68b570e8251073443a8c30635e669927,
@@ -729,7 +639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnim: {fileID: 1995358962}
-  iceProjectile: {fileID: 6642230542406581135, guid: b4a10f47cce9d744fbce71e18eddef3b,
+  iceProjectile: {fileID: 4816286272785335095, guid: 5368c877dc803ba4bbcc80946d2d62c7,
     type: 3}
   projectileStartPoint: {fileID: 1999039134}
   isThrowing: 0
@@ -812,5 +722,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7215872502484132819, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
+        type: 3}
+      propertyPath: iceMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: e8a7db8bb30ba7846922a11cebbe1a2f, type: 2}
+    - target: {fileID: 7215872502484132819, guid: fcd79e1f965a7fd4baf62e1ce39a4b62,
+        type: 3}
+      propertyPath: iceBreakEffect
+      value: 
+      objectReference: {fileID: 8877791817386654020, guid: c19c64a1e8abf614da79b068b2f4bcf4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcd79e1f965a7fd4baf62e1ce39a4b62, type: 3}

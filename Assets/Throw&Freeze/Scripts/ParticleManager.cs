@@ -6,7 +6,7 @@ public class ParticleManager : MonoBehaviour
 {
 
     private ParticleSystem ps;
-
+    public float particleDuration;
    
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class ParticleManager : MonoBehaviour
 
         //at some point the partcile stops playing
         //when that happens, destroy it
-        StartCoroutine(DestroyParticles(5.0f));
+        StartCoroutine(DestroyParticles(particleDuration));
        
         
     }
