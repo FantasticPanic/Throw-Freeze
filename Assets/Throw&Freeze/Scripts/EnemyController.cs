@@ -9,9 +9,10 @@ public class EnemyController : MonoBehaviour
     //enemy original material
     [SerializeField]
     private Renderer[] skinMeshChildren;
-
+    //get a list of the original materials that the gameObject started with
     [SerializeField]
-    private Material[] originalMaterials;
+    //public List<Material> originalMaterials = new List<Material>();
+    public Material[] ogMats;
     //frozen material
     public Material iceMaterial;
 
@@ -84,7 +85,8 @@ public class EnemyController : MonoBehaviour
             {
                 mats[i] = rend.material;
             }
-            rend.materials = originalMaterials;
+            // rend.materials = originalMaterials.ToArray();
+            rend.materials = ogMats;
         }
     }
 
@@ -98,11 +100,13 @@ public class EnemyController : MonoBehaviour
         foreach (Renderer rend in skinMeshChildren)
         {   //get the total number of materials that is in the Skinned Mesh Renderer in the children
             //any material found in the children is going to be the orginal material that the gameobject started with
-            for (int i = 0; i <= rend.materials.Length; i++)
+            for (int i = 0; i < rend.materials.Length; i++)
             {
-                originalMaterials = rend.materials;
-            }
+                //THIS IS A VERY BRUTE FORCE APPLICATION
+                //THIS WILL ONLY GET MATERIALS OF THE LAST CHILD GAMEOBJECT
+                ogMats = rend.materials;
 
+            }
         }
     }
 

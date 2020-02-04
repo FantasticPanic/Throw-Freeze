@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCollider: {fileID: 0}
   skinMeshChildren: []
-  originalMaterials: []
+  ogMats: []
   iceMaterial: {fileID: 2100000, guid: a826dc9454e63a8498054579b27ca55b, type: 2}
   unfrozenTimer: 5
 --- !u!1 &1850816956553712268
@@ -438,7 +438,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9000296237531834661}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &7548709377356655296
 SkinnedMeshRenderer:
@@ -781,12 +781,12 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2834519938650125328}
   - {fileID: 6898878506386946298}
   - {fileID: 8184144402570969663}
   - {fileID: 1541042389560722695}
   - {fileID: 7369146640663625488}
   - {fileID: 6417399004675281006}
+  - {fileID: 2834519938650125328}
   m_Father: {fileID: 2403049740339693764}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1099,7 +1099,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9000296237531834661}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &7638544086664444408
 SkinnedMeshRenderer:
@@ -1192,7 +1192,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9000296237531834661}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1013029428871768088
 SkinnedMeshRenderer:
@@ -1436,7 +1436,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9000296237531834661}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5430204849761086285
 SkinnedMeshRenderer:
@@ -1528,7 +1528,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9000296237531834661}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5009748084307440252
 SkinnedMeshRenderer:
@@ -1622,5 +1622,5 @@ Transform:
   m_Children:
   - {fileID: 2866414084861478925}
   m_Father: {fileID: 9000296237531834661}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -10,8 +10,8 @@ public class EnemyControllerCopy : MonoBehaviour
     private Renderer[] skinMeshChildren;
     //variable for the original materials
     [SerializeField]
-    private Material[] originalMaterials;
-
+    //private Material[] originalMaterials;
+    public List<Material> originalMaterials = new List<Material>();
 
     // Start is called before the first frame update 
     void Start()
@@ -38,7 +38,8 @@ public class EnemyControllerCopy : MonoBehaviour
             //any material found in the children is going to be the orginal material that the gameobject started with
             for (int i = 0; i < rend.materials.Length; i++)
             {
-                originalMaterials = rend.materials;
+                //originalMaterials = rend.materials;
+                originalMaterials.AddRange(rend.materials);
             }
 
         }
