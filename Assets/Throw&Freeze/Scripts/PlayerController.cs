@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool isThrowing;
 
+    [SerializeField]
+    private int playerMineralCount = 100;
+
     private static PlayerController playerInstance;
     //allows us to reference the playerInstance in other scripts
     public static PlayerController PlayerInstance
@@ -33,7 +36,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(DecreaseMineralOverTime());
     }
 
     // Update is called once per frame
@@ -42,7 +45,7 @@ public class PlayerController : MonoBehaviour
         //if player presses space or any button 
         if (isThrowing == false)
         {
-            if (Input.GetButtonDown("Submit"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 isThrowing = true;
             }
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
             isThrowing = false;
         }
         Throw();
+        
     }
 
     private void Throw()
@@ -70,10 +74,24 @@ public class PlayerController : MonoBehaviour
     {
         isThrowing = false;
     }
-
+    
+    //spawn the ice projectile when the player presses the throw button
     public void AnimationThrow()
     {
         Instantiate(iceProjectile, projectileStartPoint.transform.position, Quaternion.identity);
+    }
+
+    //decrease the player mineral by 1 every 2 seconds
+    private IEnumerator DecreaseMineralOverTime()
+    {
+        if (playerMineralCount > 0)
+        {
+
+            yield return new WaitForSeconds(2.0f);
+            playerMineralCount -= 1;
+        }
+        StartCoroutine(DecreaseMineralOverTime());
+        Debug.Log(playerMineralCount);
     }
 
 

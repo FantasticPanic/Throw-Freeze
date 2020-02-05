@@ -11,8 +11,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private Renderer[] skinMeshChildren;
     //get a list of the original materials that the gameObject started with
-    [SerializeField]
-    //public List<Material> originalMaterials = new List<Material>();
     public Material[] ogMats;
     //frozen material
     public Material iceMaterial;
@@ -21,9 +19,12 @@ public class EnemyController : MonoBehaviour
     private int mineralCount = 100;
     //variable for mineral prefab
     public GameObject mineralPrefabs;
-
+    //enemy will be unfrozen when this timer is over
     public float unfrozenTimer = 5f;
+    //ice break effect when unfrozerTimer hits zero
     public GameObject iceBreakEffect;
+    //minerals thatt fall from hit enemy
+    public GameObject minerals;
 
     // Start is called before the first frame update
 
@@ -53,6 +54,7 @@ public class EnemyController : MonoBehaviour
             ChangeMaterial(iceMaterial);
             //when enemy is hit by projectile, mineral count is reduced by 30% of current mineral count
             mineralCount = mineralCount - (int)(mineralCount * .3);
+            SpawnMinerals();
         }
 
     }
@@ -119,14 +121,23 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private  IEnumerator ChangeBackMaterial(float waitTime)
+    private IEnumerator ChangeBackMaterial(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         ChangeBackMaterial();
         Instantiate(iceBreakEffect, transform.position, Quaternion.identity);
-
+        
     }
 
+
+    private void SpawnMinerals()
+    {
+        for (int i = 0; i< 5; i++)
+        {
+            Instantiate(minerals, Vector3.zero, Quaternion.identity);
+        }
+        
+    }
 
     /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 
      * 
