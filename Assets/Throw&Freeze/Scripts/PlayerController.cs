@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private int playerMineralCount = 100;
 
+    public Camera fpsCam;
+
     private static PlayerController playerInstance;
     //allows us to reference the playerInstance in other scripts
     public static PlayerController PlayerInstance
@@ -76,8 +78,18 @@ public class PlayerController : MonoBehaviour
     }
     
     //spawn the ice projectile when the player presses the throw button
+    //THIS IS AN ANIMATION EVENT
     public void AnimationThrow()
     {
+        //raycast
+        //RaycastHit hit;
+        //if the raycast starting from the camera position
+        //pointing out in front of the camera position
+        /*  if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, 10f))
+          {
+              Instantiate(iceProjectile, projectileStartPoint.transform.position, Quaternion.LookRotation(hit.normal));
+          }*/
+
         Instantiate(iceProjectile, projectileStartPoint.transform.position, Quaternion.identity);
     }
 

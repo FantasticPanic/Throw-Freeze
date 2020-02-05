@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6313743829859151278}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Neck_Ctrl_Grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8198856869816924726}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6198516850683223928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jnt_L_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1740845091265485062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jnt_L_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 7215872502484132820}
   - component: {fileID: 7215872502484132816}
   - component: {fileID: 7215872502484132819}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dummy_robot
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -222,8 +222,14 @@ MonoBehaviour:
   enemyCollider: {fileID: 0}
   skinMeshChildren: []
   ogMats: []
-  iceMaterial: {fileID: 2100000, guid: a826dc9454e63a8498054579b27ca55b, type: 2}
+  iceMaterial: {fileID: 2100000, guid: e8a7db8bb30ba7846922a11cebbe1a2f, type: 2}
+  mineralCount: 100
+  mineralPrefabs: {fileID: 0}
   unfrozenTimer: 5
+  iceBreakEffect: {fileID: 8877791817386654020, guid: c19c64a1e8abf614da79b068b2f4bcf4,
+    type: 3}
+  minerals: {fileID: 9163699566980471022, guid: 236b10293a4efaa4db47e17be62ae57c,
+    type: 3}
 --- !u!1 &1850816956553712268
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 648898382633191835}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jnt_R_Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7948063099354710757}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Global_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2973244431423061291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left_Leg_Ctrl_Grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6864095099082996099}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right_Leg_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6356638349754530759}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jnt_R_hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5449035286160775924}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right_Leg_Ctrl_Grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6417399004675281006}
   - component: {fileID: 7548709377356655296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3120299554148563001}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left_Shoulder_Ctrl_Grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +548,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6264871604120882005}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left_Elbo_Ctrl_Grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7276375451495710710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right_Shoulder_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8666746062354711038}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jnt_L_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8852638067440818659}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: COG_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1781446123050951739}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jnt_palvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3866123758542513558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jnt_L_elbo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8097956250002032323}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left_Leg_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9000296237531834661}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Geo_Grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1076145583961677579}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left_Shoulder_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,7 +836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 387454483782510265}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jnt_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9038097361127150605}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right_Shoulder_Ctrl_Grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7307781062416657166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: COG_Ctrl_Grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,7 +931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4326129832893146769}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jnt_R_elbo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,7 +962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3133501755526996192}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jnt_neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,7 +993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2866414084861478925}
   - component: {fileID: 644401994309076542}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: polySurface6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,7 +1086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8184144402570969663}
   - component: {fileID: 7638544086664444408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__polySurface6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,7 +1179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7369146640663625488}
   - component: {fileID: 1013029428871768088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: polySurface3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1264,7 +1270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3158150808797342841}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Neck_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1294,7 +1300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1374841835372885342}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right_Elbo_Ctrl_Grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1325,7 +1331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5354233592151503748}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right_Elbo_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1355,7 +1361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5677507073522955005}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Joint_Grp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,7 +1392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6986483120538521920}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left_Elbo_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1417,7 +1423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6898878506386946298}
   - component: {fileID: 5430204849761086285}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__polySurface5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1509,7 +1515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2834519938650125328}
   - component: {fileID: 5009748084307440252}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: polySurface5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1602,7 +1608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1541042389560722695}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

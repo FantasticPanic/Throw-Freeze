@@ -134,7 +134,7 @@ public class EnemyController : MonoBehaviour
     {
         for (int i = 0; i< 5; i++)
         {
-            Instantiate(minerals, Vector3.zero, Quaternion.identity);
+            Instantiate(minerals, transform.position, Quaternion.identity);
         }
         
     }

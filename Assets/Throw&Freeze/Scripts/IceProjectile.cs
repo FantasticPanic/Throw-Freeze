@@ -16,9 +16,18 @@ public class IceProjectile : ProjectileController
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(PlayerController.PlayerInstance.transform.forward * speed * Time.deltaTime);
+        //transform.Translate(PlayerController.PlayerInstance.transform.forward * speed * Time.deltaTime);
+        if (speed != 0)
+        {
+            transform.position += PlayerController.PlayerInstance.fpsCam.transform.forward * (speed * Time.deltaTime);
+        }
         base.Update();
         
+    }
+
+    void FixedUpdate()
+    {
+        //RIGID_BODY.AddForce(PlayerController.PlayerInstance.transform.forward * speed * Time.deltaTime);
     }
 
     /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 

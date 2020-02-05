@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9163699566983660782}
   - component: {fileID: 9163699566982661678}
   - component: {fileID: 9163699566989863726}
-  - component: {fileID: 3244353115875826452}
   - component: {fileID: 645774621733968723}
+  - component: {fileID: -7351541491586644327}
   m_Layer: 0
   m_Name: MineralDrop
   m_TagString: Untagged
@@ -100,20 +100,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &3244353115875826452
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9163699566980471022}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: c929406ff5ebcce4983fbc90062c1513, type: 3}
 --- !u!54 &645774621733968723
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,3 +116,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &-7351541491586644327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163699566980471022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14214543, y: 0.14566332, z: 0.32085228}
+  m_Center: {x: -0.0009385608, y: -0.0031038679, z: 0.08348871}
