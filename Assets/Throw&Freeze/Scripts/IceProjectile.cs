@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class IceProjectile : ProjectileController
 {
-    public GameObject iceProjectile;
+    //public GameObject iceProjectile;
     private Rigidbody RIGID_BODY;
 
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
+        RIGID_BODY = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -19,7 +20,8 @@ public class IceProjectile : ProjectileController
         //transform.Translate(PlayerController.PlayerInstance.transform.forward * speed * Time.deltaTime);
         if (speed != 0)
         {
-            transform.position += PlayerController.PlayerInstance.fpsCam.transform.forward * (speed * Time.deltaTime);
+            //transform.position += PlayerController.PlayerInstance.fpsCam.transform.forward * (speed * Time.deltaTime);
+           // RIGID_BODY.AddForce(PlayerController.PlayerInstance.fpsCam.transform.forward * 7.0f);
         }
         base.Update();
         
@@ -28,6 +30,8 @@ public class IceProjectile : ProjectileController
     void FixedUpdate()
     {
         //RIGID_BODY.AddForce(PlayerController.PlayerInstance.transform.forward * speed * Time.deltaTime);
+        // RIGID_BODY.AddForce(PlayerController.PlayerInstance.fpsCam.transform.forward * speed);
+        base.FixedUpdate();
     }
 
     /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 

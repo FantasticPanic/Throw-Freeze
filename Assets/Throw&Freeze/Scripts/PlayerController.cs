@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,8 +17,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private int playerMineralCount = 100;
-
+    //first person camera
     public Camera fpsCam;
+    //TextMesh for mineralCOunt
+    public TextMeshProUGUI mineralCountText;
+
+    //TextMesh for mineral decrease timer
+    public TextMeshProUGUI mineralDecreaseText;
 
     private static PlayerController playerInstance;
     //allows us to reference the playerInstance in other scripts
@@ -57,6 +63,13 @@ public class PlayerController : MonoBehaviour
             isThrowing = false;
         }
         Throw();
+        mineralCountText.text = "Mineral Count : " + playerMineralCount;
+
+        //the maximum minerals a player can have is 100
+        if (playerMineralCount > 100)
+        {
+            playerMineralCount = 100;
+        }
         
     }
 
@@ -81,16 +94,11 @@ public class PlayerController : MonoBehaviour
     //THIS IS AN ANIMATION EVENT
     public void AnimationThrow()
     {
-        //raycast
-        //RaycastHit hit;
-        //if the raycast starting from the camera position
-        //pointing out in front of the camera position
-        /*  if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, 10f))
-          {
-              Instantiate(iceProjectile, projectileStartPoint.transform.position, Quaternion.LookRotation(hit.normal));
-          }*/
-
+         //spawn an iceProjectile at a Transform start posision
+         //no rotation
         Instantiate(iceProjectile, projectileStartPoint.transform.position, Quaternion.identity);
+       // Instantiate(iceProjectile, projectileStartPoint.transform.position, Quaternion.identity);
+       
     }
 
     //decrease the player mineral by 1 every 2 seconds
@@ -98,7 +106,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerMineralCount > 0)
         {
-
+            
             yield return new WaitForSeconds(2.0f);
             playerMineralCount -= 1;
         }
@@ -106,6 +114,13 @@ public class PlayerController : MonoBehaviour
         Debug.Log(playerMineralCount);
     }
 
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Pickups")
+        {
+            playerMineralCount += 1;
+        }
+    }
 
     /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 
      * 

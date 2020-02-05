@@ -17,18 +17,26 @@ public class ProjectileController : MonoBehaviour
     public LayerMask whatIsSolid;
     //the particle effect that will appear when the projectile is destroyed
     public GameObject destroyEffect;
+
+    public GameObject projectilePrefab;
+    public Rigidbody _RIGID_BODY;
     //projectile collider
     public Collider projectileCollider;
-    // Start is called before the first frame update
+
+    //Raycast for projectiles
+    private RaycastHit hit;
 
     protected virtual void Start()
     {
         projectileCollider = GetComponent<Collider>();
+        _RIGID_BODY = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
    protected virtual void Update()
     {
+        
         Invoke("DestroyProjectile", lifetime);
     }
 
@@ -47,6 +55,17 @@ public class ProjectileController : MonoBehaviour
         }
     }
 
+    protected virtual void FixedUpdate()
+    {
+        // Debug.DrawLine(PlayerController.PlayerInstance.fpsCam.transform.forward, hit.point);
+        //Ray ray = PlayerController.PlayerInstance.fpsCam.ScreenPointToRay(Input.mousePosition);
+        //start from ray position and go out to inifinity
+        //  if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        //  {
+        _RIGID_BODY.AddForce(transform.forward * speed);
+
+      //  }
+    }
 
     /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 
      * 

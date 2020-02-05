@@ -25,6 +25,8 @@ public class EnemyController : MonoBehaviour
     public GameObject iceBreakEffect;
     //minerals thatt fall from hit enemy
     public GameObject minerals;
+    [SerializeField][HideInInspector]
+    private bool isFrozen;
 
     // Start is called before the first frame update
 
@@ -46,15 +48,17 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "IceProjectile")
+        if (col.gameObject.tag == "IceProjectile" && !isFrozen)
 
         {
+            isFrozen = true;
             Debug.Log("Enemy is Frozen");
             //changes NPC material to ice
             ChangeMaterial(iceMaterial);
             //when enemy is hit by projectile, mineral count is reduced by 30% of current mineral count
             mineralCount = mineralCount - (int)(mineralCount * .3);
             SpawnMinerals();
+
         }
 
     }
@@ -126,6 +130,7 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         ChangeBackMaterial();
         Instantiate(iceBreakEffect, transform.position, Quaternion.identity);
+        isFrozen = false;
         
     }
 
