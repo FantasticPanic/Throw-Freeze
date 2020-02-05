@@ -17,8 +17,7 @@ public class ProjectileController : MonoBehaviour
     public LayerMask whatIsSolid;
     //the particle effect that will appear when the projectile is destroyed
     public GameObject destroyEffect;
-
-    public GameObject projectilePrefab;
+    //rigidbody of gameobject 
     public Rigidbody _RIGID_BODY;
     //projectile collider
     public Collider projectileCollider;
@@ -38,6 +37,7 @@ public class ProjectileController : MonoBehaviour
     {
         
         Invoke("DestroyProjectile", lifetime);
+
     }
 
    protected private void DestroyProjectile()
@@ -50,6 +50,11 @@ public class ProjectileController : MonoBehaviour
     public void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Enemy")
+        {
+            DestroyProjectile();
+        }
+
+        if (whatIsSolid.value != 11)
         {
             DestroyProjectile();
         }

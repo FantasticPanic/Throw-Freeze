@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
     {
          //spawn an iceProjectile at a Transform start posision
          //no rotation
-        Instantiate(iceProjectile, projectileStartPoint.transform.position, Quaternion.identity);
+        Instantiate(iceProjectile, projectileStartPoint.transform.position, fpsCam.transform.rotation);
        // Instantiate(iceProjectile, projectileStartPoint.transform.position, Quaternion.identity);
        
     }

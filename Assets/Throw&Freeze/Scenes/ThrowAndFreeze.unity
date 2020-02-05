@@ -120,6 +120,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &159210833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5725755547642572031, guid: 6466b199abdf35a4580e4e307f7781c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3531325284483052186}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &351934485 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6167904293427101411, guid: 68b570e8251073443a8c30635e669927,
@@ -1376,8 +1382,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.220446e-16, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 1.65, z: 10}
+  m_Center: {x: 0, y: -0.83, z: 0}
 --- !u!23 &1869245689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1550,6 +1556,11 @@ PrefabInstance:
       propertyPath: mineralDecreaseText
       value: 
       objectReference: {fileID: 1312618456}
+    - target: {fileID: 3531325283025645675, guid: 6466b199abdf35a4580e4e307f7781c6,
+        type: 3}
+      propertyPath: projectileStartPoint
+      value: 
+      objectReference: {fileID: 159210833}
     - target: {fileID: 3571798509731002438, guid: 6466b199abdf35a4580e4e307f7781c6,
         type: 3}
       propertyPath: m_Layer
