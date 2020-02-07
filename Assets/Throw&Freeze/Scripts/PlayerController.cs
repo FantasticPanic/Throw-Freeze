@@ -43,9 +43,9 @@ public class PlayerController : MonoBehaviour
             return playerInstance;
         }
     }
-    // Start is called before the first frame update
     void Start()
     {
+        //Decrease the mineral count over time
         StartCoroutine(DecreaseMineralOverTime());
     }
 
@@ -54,16 +54,19 @@ public class PlayerController : MonoBehaviour
     {
         //if player presses space or any button 
         if (isThrowing == false)
-        {
+        {   //player left clicks
             if (Input.GetButtonDown("Fire1"))
-            {
+            {   
+                //player is throwing
                 isThrowing = true;
             }
         }
         else
         {
+            //player is not throwing
             isThrowing = false;
         }
+
         Throw();
         mineralCountText.text = "Mineral Count : " + playerMineralCount;
 
@@ -76,9 +79,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Throw()
-    {
+    {   //if isThrowing bool is true
         if (isThrowing == true)
         {
+            //trigger the player Animator to play the throwing animation
             playerAnim.SetBool("isThrowing", true);
         }
         else
@@ -129,7 +133,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
 
     private void SpawnMinerals()
     {

@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private Renderer[] skinMeshChildren;
     //get a list of the original materials that the gameObject started with
-    public Material[] ogMats;
+    public Material[] originalMaterials;
     //frozen material
     public Material iceMaterial;
     //mineral count for enemy
@@ -32,10 +32,14 @@ public class EnemyController : MonoBehaviour
     
     void Start()
     {
-        //get the collider component
-        //enemyCollider = GetComponent<Collider>();
-        //get the renderer components of this gameobject's children
+        //get the skin mesh renderer in each child object
         skinMeshChildren = GetComponentsInChildren<Renderer>();
+        //get the material that the gameObject started with
+        
+        /*NOTE"
+         In order to get the original materials, the last child object in the heirarchy must have all 
+         of the materials used on the gameObject.
+         */
         GetOriginalMaterial();
     }
 
@@ -47,22 +51,23 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
+        //if this gameObject gets hit with an projectile with the tag called "IceProjectile"
+        //and the bool isFrozen is not true
         if (col.gameObject.tag == "IceProjectile" && !isFrozen)
-
         {
+            //player is frozen
             isFrozen = true;
             Debug.Log("Enemy is Frozen");
             //changes NPC material to ice
             ChangeMaterial(iceMaterial);
             //when enemy is hit by projectile, mineral count is reduced by 30% of current mineral count
             mineralCount = mineralCount - (int)(mineralCount * .3);
+            //spawn the minerals
             SpawnMinerals();
 
         }
 
     }
-
-
 
     private void ChangeMaterial(Material newMat)
     {
@@ -72,27 +77,25 @@ public class EnemyController : MonoBehaviour
         children = GetComponentsInChildren<Renderer>();
         //foreach Renderer in the children
         foreach (Renderer rend in children)
-        {   //get the materials in the mats
+        {   //get the materials in the materials
             var mats = new Material[rend.materials.Length];
+            //interate through the materials in the renderer
             for (int i = 0; i < rend.materials.Length; i++)
-            {
+            {   //all the materials will be whatever the parameter is
                 mats[i] = newMat;
             }
             rend.materials = mats;
         }
+        //turn off the ice material in (unfrozenTimer) seconds
         StartCoroutine(ChangeBackMaterial(unfrozenTimer));
     }
 
     private void ChangeBackMaterial()
     {
-        //renderer array is children
-        //Renderer[] children;
-        //the children is an array of the renderer components in gameobject's children
-        //children = GetComponentsInChildren<Renderer>();
         //foreach Renderer in the children
         foreach (Renderer rend in skinMeshChildren)
         {   //get the total number of materials for each Skin Mesh in the children
-            // each material is reffered to as mats
+            //each material is reffered to as mats
             var mats = new Material[rend.materials.Length];
             //interate through each of the materials
             for (int i = 0; i < rend.materials.Length; i++)
@@ -100,16 +103,12 @@ public class EnemyController : MonoBehaviour
                 mats[i] = rend.material;
             }
             // rend.materials = originalMaterials.ToArray();
-            rend.materials = ogMats;
+            rend.materials = originalMaterials;
         }
     }
 
     private void GetOriginalMaterial()
     {
-        //create a Renderer array variable
-        Renderer[] skinMeshChildren;
-        //get the Renderer component from each child 
-        skinMeshChildren = GetComponentsInChildren<Renderer>();
         //for each of the Renderer components in the children
         foreach (Renderer rend in skinMeshChildren)
         {   //get the total number of materials that is in the Skinned Mesh Renderer in the children
@@ -118,7 +117,7 @@ public class EnemyController : MonoBehaviour
             {
                 //THIS IS A VERY BRUTE FORCE APPLICATION
                 //THIS WILL ONLY GET MATERIALS OF THE LAST CHILD GAMEOBJECT
-                ogMats = rend.materials;
+                originalMaterials = rend.materials;
 
             }
         }
@@ -126,9 +125,13 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator ChangeBackMaterial(float waitTime)
     {
+        //wait for waitTime seconds
         yield return new WaitForSeconds(waitTime);
+        //change the player back to original material
         ChangeBackMaterial();
+        //spawn the ice breaking effect at transform.up position, no rotation
         Instantiate(iceBreakEffect, transform.up, Quaternion.identity);
+        //now that the player has changed back, the player is not frozen
         isFrozen = false;
         
     }
@@ -136,8 +139,9 @@ public class EnemyController : MonoBehaviour
 
     private void SpawnMinerals()
     {
+        //spawn 5 minerals 
         for (int i = 0; i< 5; i++)
-        {
+        {   //instantiate the mineral prefabs at the gameObject's position with no rotation
             Instantiate(mineralPrefabs, transform.position, Quaternion.identity);
         }
         
