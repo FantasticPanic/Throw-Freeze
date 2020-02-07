@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     //TextMesh for mineral decrease timer
     public TextMeshProUGUI mineralDecreaseText;
 
+    public GameObject mineralPrefabs;
+
     private static PlayerController playerInstance;
     //allows us to reference the playerInstance in other scripts
     public static PlayerController PlayerInstance
@@ -104,11 +106,16 @@ public class PlayerController : MonoBehaviour
     //decrease the player mineral by 1 every 2 seconds
     private IEnumerator DecreaseMineralOverTime()
     {
-        if (playerMineralCount > 0)
+        if (playerMineralCount >= 0)
         {
             
             yield return new WaitForSeconds(2.0f);
             playerMineralCount -= 1;
+            if (playerMineralCount < 0)
+            {
+                playerMineralCount = 0;
+                Debug.Log("Player is dead");
+            }
         }
         StartCoroutine(DecreaseMineralOverTime());
         Debug.Log(playerMineralCount);
@@ -122,7 +129,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
+
+    private void SpawnMinerals()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Instantiate(mineralPrefabs, transform.position, Quaternion.identity);
+        }
+
+    }
+}
+
     /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 
      * 
      *COPYRIGHT 2020, NICHOLAS RAMSAY, ALL RIGHTS RESERVED */
-}

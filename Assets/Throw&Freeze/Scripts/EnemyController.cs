@@ -24,7 +24,6 @@ public class EnemyController : MonoBehaviour
     //ice break effect when unfrozerTimer hits zero
     public GameObject iceBreakEffect;
     //minerals thatt fall from hit enemy
-    public GameObject minerals;
     [SerializeField][HideInInspector]
     private bool isFrozen;
 
@@ -34,7 +33,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         //get the collider component
-        enemyCollider = GetComponent<Collider>();
+        //enemyCollider = GetComponent<Collider>();
         //get the renderer components of this gameobject's children
         skinMeshChildren = GetComponentsInChildren<Renderer>();
         GetOriginalMaterial();
@@ -129,7 +128,7 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         ChangeBackMaterial();
-        Instantiate(iceBreakEffect, transform.position, Quaternion.identity);
+        Instantiate(iceBreakEffect, transform.up, Quaternion.identity);
         isFrozen = false;
         
     }
@@ -139,7 +138,7 @@ public class EnemyController : MonoBehaviour
     {
         for (int i = 0; i< 5; i++)
         {
-            Instantiate(minerals, transform.position, Quaternion.identity);
+            Instantiate(mineralPrefabs, transform.position, Quaternion.identity);
         }
         
     }
