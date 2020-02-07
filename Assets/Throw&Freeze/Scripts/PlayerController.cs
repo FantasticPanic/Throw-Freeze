@@ -109,39 +109,35 @@ public class PlayerController : MonoBehaviour
 
     //decrease the player mineral by 1 every 2 seconds
     private IEnumerator DecreaseMineralOverTime()
-    {
+    {   //if player mineral count is equal or larger than 0
         if (playerMineralCount >= 0)
-        {
-            
+        {      
             yield return new WaitForSeconds(2.0f);
+            //decrease by 1 every 2 seconds
             playerMineralCount -= 1;
+            //if player count is less than 0
             if (playerMineralCount < 0)
             {
+                //just make the mineral count 0. No negatives
                 playerMineralCount = 0;
                 Debug.Log("Player is dead");
             }
         }
+        //Loop the IEnumerator
         StartCoroutine(DecreaseMineralOverTime());
         Debug.Log(playerMineralCount);
     }
 
+    //if the player walks into a trigger collider with the tag "Pickups"
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Pickups")
         {
+            //increase by mineral count by 1
             playerMineralCount += 1;
         }
     }
 
-
-    private void SpawnMinerals()
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            Instantiate(mineralPrefabs, transform.position, Quaternion.identity);
-        }
-
-    }
 }
 
     /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 

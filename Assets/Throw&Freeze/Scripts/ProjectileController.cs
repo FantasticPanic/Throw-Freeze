@@ -25,14 +25,14 @@ public class ProjectileController : MonoBehaviour
     //Raycast for projectiles
     private RaycastHit hit;
 
-    protected virtual void Start()
+    protected  void Start()
     {
-        projectileCollider = GetComponent<Collider>();
+         projectileCollider = GetComponent<Collider>();
         _RIGID_BODY = GetComponent<Rigidbody>();
         
     }
 
-    // Update is called once per frame
+    //When the object has counted up to lifetime, destroy the projectile
    protected virtual void Update()
     {
         
@@ -47,13 +47,14 @@ public class ProjectileController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //if the projectile's collider enters a collider with the tag "Enemy"
     public void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Enemy")
         {
             DestroyProjectile();
         }
-
+        //if the layer is not equal to the current player then destroy the projectile
         if (whatIsSolid.value != 11)
         {
             DestroyProjectile();
@@ -62,14 +63,10 @@ public class ProjectileController : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        // Debug.DrawLine(PlayerController.PlayerInstance.fpsCam.transform.forward, hit.point);
-        //Ray ray = PlayerController.PlayerInstance.fpsCam.ScreenPointToRay(Input.mousePosition);
-        //start from ray position and go out to inifinity
-        //  if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-        //  {
+        //Add force to the rigid body of the projectile
         _RIGID_BODY.AddForce(transform.forward * speed);
 
-      //  }
+      
     }
 
     /*PROGRAMMED AND COMMENTED BY NICHOLAS RAMSAY 

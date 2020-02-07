@@ -8,7 +8,7 @@ public class ParticleManager : MonoBehaviour
     private ParticleSystem ps;
     public float particleDuration;
    
-    // Start is called before the first frame update
+    
     void Start()
     {
         ps = GetComponent<ParticleSystem>();
@@ -24,7 +24,7 @@ public class ParticleManager : MonoBehaviour
        
         
     }
-
+    //destroy the particles after they have been spawned for waitTime seconds
     private IEnumerator DestroyParticles(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
